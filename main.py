@@ -3,7 +3,8 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import re
 from typing import List
-from duckduckgo_search import DDGS  
+from duckduckgo_search import DDGS
+from fastapi.responses import JSONResponse
 
 app = FastAPI()
 
@@ -54,7 +55,7 @@ async def handle_request(request: QueryRequest):
         "sources": sources 
     }
 
-    return response
+    return JSONResponse(content=response)
 
 # Команда для запуска: uvicorn main:app --reload
 if __name__ == "__main__":

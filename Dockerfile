@@ -1,3 +1,5 @@
+#docker build -t fastapi-app .
+#docker run -p 8000:8000 fastapi-app
 # Используем официальный образ Python как базовый
 FROM python:3.10-slim
 
